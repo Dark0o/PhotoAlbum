@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AlbumsService } from '../services/albums.service';
+import { UsersService } from '../services/users.service';
 
 @Component({
   selector: 'app-albums',
@@ -7,11 +8,30 @@ import { AlbumsService } from '../services/albums.service';
   styleUrls: ['./albums.component.scss'],
 })
 export class AlbumsComponent implements OnInit {
-  constructor(private albumsService: AlbumsService) {}
+  albums;
+
+  constructor(
+    private albumsService: AlbumsService,
+    private usersService: UsersService
+  ) {}
 
   ngOnInit(): void {
     this.albumsService.getAllAlbums().subscribe((albums) => {
-      console.log(albums);
+      this.albums = albums.map((album) => {
+        this.usersService.getUserById(album.userId).subscribe((user) => {
+          album.createdBy = user.name;
+        });
+        this.usersService
+          .getFirstPhotoByAlbumID(album.id)
+          .subscribe((photos) => {
+            album.url = photos[0].thumbnailUrl;
+            // console.log(photo);
+            console.log(album.id);
+          });
+
+        return album;
+      });
+      console.log(this.albums);
     });
   }
 }
