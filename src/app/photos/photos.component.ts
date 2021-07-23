@@ -11,6 +11,7 @@ import { AlbumsService } from '../services/albums.service';
 export class PhotosComponent implements OnInit {
   albumID;
   photos;
+  albumTitle;
   constructor(
     private photosService: PhotosService,
     private albumsService: AlbumsService,
@@ -22,11 +23,9 @@ export class PhotosComponent implements OnInit {
 
   ngOnInit(): void {
     this.photosService.getPhotosByAlbumId(this.albumID).subscribe((photos) => {
-      this.photos = photos.map((photo) => {
-        this.albumsService.getAlbumById(this.albumID).subscribe((album) => {
-          photo.albumTitle = album.title;
-        });
-        return photo;
+      this.photos = photos;
+      this.albumsService.getAlbumById(this.albumID).subscribe((album) => {
+        this.albumTitle = album.title;
       });
       console.log(photos);
     });
