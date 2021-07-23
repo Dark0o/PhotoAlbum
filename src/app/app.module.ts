@@ -6,6 +6,7 @@ import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { AlbumsComponent } from './albums/albums.component';
 import { PhotosComponent } from './photos/photos.component';
+import { RoutingModule } from './routing/routing.module';
 
 @NgModule({
   declarations: [
@@ -13,12 +14,10 @@ import { PhotosComponent } from './photos/photos.component';
     HomeComponent,
     LoginComponent,
     AlbumsComponent,
-    PhotosComponent
+    PhotosComponent,
   ],
-  imports: [
-    BrowserModule
-  ],
+  imports: [BrowserModule, RoutingModule],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
