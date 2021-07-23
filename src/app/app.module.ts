@@ -7,6 +7,7 @@ import { LoginComponent } from './login/login.component';
 import { AlbumsComponent } from './albums/albums.component';
 import { PhotosComponent } from './photos/photos.component';
 import { RoutingModule } from './routing/routing.module';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,7 @@ import { RoutingModule } from './routing/routing.module';
     AlbumsComponent,
     PhotosComponent,
   ],
-  imports: [BrowserModule, RoutingModule],
+  imports: [BrowserModule, RoutingModule, FormsModule],
   providers: [],
   bootstrap: [AppComponent],
 })

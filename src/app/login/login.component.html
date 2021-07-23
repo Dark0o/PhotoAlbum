@@ -1,1 +1,17 @@
-<p>login works!</p>
+<div class="container">
+  <h3>Login Form</h3>
+
+  <div>
+    <form #loginForm="ngForm">
+      <div class="input-container">
+        <input class="fields" type='text' name='username' placeholder="username" ngModel>
+        <input class="fields" type="password" name="password" placeholder="password" ngModel>
+      </div>
+
+      <div class="btn-container">
+        <button class="btn" type="submit">Log in</button>
+      </div>
+
+    </form>
+  </div>
+</div>
