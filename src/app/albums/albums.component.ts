@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AlbumsService } from '../services/albums.service';
 import { UsersService } from '../services/users.service';
+import { PhotosService } from '../services/photos.service';
 
 @Component({
   selector: 'app-albums',
@@ -12,7 +13,8 @@ export class AlbumsComponent implements OnInit {
 
   constructor(
     private albumsService: AlbumsService,
-    private usersService: UsersService
+    private usersService: UsersService,
+    private photosService: PhotosService
   ) {}
 
   ngOnInit(): void {
@@ -21,7 +23,7 @@ export class AlbumsComponent implements OnInit {
         this.usersService.getUserById(album.userId).subscribe((user) => {
           album.createdBy = user.name;
         });
-        this.usersService
+        this.photosService
           .getFirstPhotoByAlbumID(album.id)
           .subscribe((photos) => {
             album.url = photos[0].thumbnailUrl;
