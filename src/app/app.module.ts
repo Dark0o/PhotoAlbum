@@ -12,7 +12,8 @@ import { UsersService } from './services/users.service';
 import { AuthService } from './services/auth/auth.service';
 import { AuthGuardService } from './services/auth/auth-guard.service';
 import { CardComponent } from './shared/card/card.component';
-
+import { AlbumsService } from './services/albums.service';
+import { HttpClientModule } from '@angular/common/http';
 @NgModule({
   declarations: [
     AppComponent,
@@ -22,8 +23,8 @@ import { CardComponent } from './shared/card/card.component';
     PhotosComponent,
     CardComponent,
   ],
-  imports: [BrowserModule, RoutingModule, FormsModule],
-  providers: [UsersService, AuthService, AuthGuardService],
+  imports: [BrowserModule, RoutingModule, FormsModule, HttpClientModule],
+  providers: [UsersService, AuthService, AuthGuardService, AlbumsService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
