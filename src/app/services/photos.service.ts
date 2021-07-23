@@ -10,4 +10,9 @@ export class PhotosService {
       `https://jsonplaceholder.typicode.com/photos?albumId=${id}`
     );
   }
+  getPhotosByAlbumId(id): Observable<any> {
+    return this.http.get(
+      `https://jsonplaceholder.typicode.com/albums/${id}/photos`
+    );
+  }
 }

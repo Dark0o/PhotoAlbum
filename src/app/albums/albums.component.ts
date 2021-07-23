@@ -11,6 +11,7 @@ import { Router } from '@angular/router';
 })
 export class AlbumsComponent implements OnInit {
   albums;
+  albumId;
 
   constructor(
     private albumsService: AlbumsService,
@@ -38,8 +39,13 @@ export class AlbumsComponent implements OnInit {
       console.log(this.albums);
     });
   }
-  urlReceived(event) {
-    console.log(event);
-    this.router.navigate(['photos']);
+  urlReceived(url) {
+    console.log(url);
+    this.albumId = this.albums.filter((a) => a.url === url);
+    console.log(this.albumId[0].id);
+
+    this.router.navigate(['photos'], {
+      state: { id: this.albumId[0].id },
+    });
   }
 }

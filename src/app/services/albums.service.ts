@@ -9,4 +9,7 @@ export class AlbumsService {
   getAllAlbums(): Observable<any> {
     return this.http.get('http://jsonplaceholder.typicode.com/albums');
   }
+  getAlbumById(id): Observable<any> {
+    return this.http.get(`http://jsonplaceholder.typicode.com/albums/${id}`);
+  }
 }
