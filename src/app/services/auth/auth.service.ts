@@ -8,9 +8,11 @@ export class AuthService {
   loggedInUser = 'user';
 
   constructor(private userService: UsersService, private router: Router) {
-    let key = JSON.parse(localStorage.getItem(this.loggedInUser));
-    if (key !== null) {
-      this.isLoggedIn = key.isUserLoggedIn;
+    let user = JSON.parse(localStorage.getItem(this.loggedInUser));
+    console.log(user);
+
+    if (user !== null) {
+      this.isLoggedIn = user.isUserLoggedIn;
     } else {
       this.isLoggedIn = false;
     }

@@ -11,6 +11,7 @@ import { FormsModule } from '@angular/forms';
 import { UsersService } from './services/users.service';
 import { AuthService } from './services/auth/auth.service';
 import { AuthGuardService } from './services/auth/auth-guard.service';
+import { CardComponent } from './shared/card/card.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { AuthGuardService } from './services/auth/auth-guard.service';
     LoginComponent,
     AlbumsComponent,
     PhotosComponent,
+    CardComponent,
   ],
   imports: [BrowserModule, RoutingModule, FormsModule],
   providers: [UsersService, AuthService, AuthGuardService],
