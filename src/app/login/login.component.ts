@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthService } from '../services/auth/auth.service';
 
 @Component({
   selector: 'app-login',
@@ -6,7 +7,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./login.component.scss'],
 })
 export class LoginComponent implements OnInit {
-  constructor() {}
+  constructor(private authService: AuthService) {}
 
   ngOnInit(): void {}
+
+  onLogIn(loginForm) {
+    this.authService.login(loginForm.value.username, loginForm.value.password);
+  }
+  onLogOut() {
+    console.log('Logged out');
+
+    this.authService.logoutUser();
+  }
 }

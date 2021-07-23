@@ -10,6 +10,7 @@ import { RoutingModule } from './routing/routing.module';
 import { FormsModule } from '@angular/forms';
 import { UsersService } from './services/users.service';
 import { AuthService } from './services/auth/auth.service';
+import { AuthGuardService } from './services/auth/auth-guard.service';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,7 @@ import { AuthService } from './services/auth/auth.service';
     PhotosComponent,
   ],
   imports: [BrowserModule, RoutingModule, FormsModule],
-  providers: [UsersService, AuthService],
+  providers: [UsersService, AuthService, AuthGuardService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
