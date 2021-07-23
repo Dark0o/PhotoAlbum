@@ -8,6 +8,8 @@ import { AlbumsComponent } from './albums/albums.component';
 import { PhotosComponent } from './photos/photos.component';
 import { RoutingModule } from './routing/routing.module';
 import { FormsModule } from '@angular/forms';
+import { UsersService } from './services/users.service';
+import { AuthService } from './services/auth/auth.service';
 
 @NgModule({
   declarations: [
@@ -18,7 +20,7 @@ import { FormsModule } from '@angular/forms';
     PhotosComponent,
   ],
   imports: [BrowserModule, RoutingModule, FormsModule],
-  providers: [],
+  providers: [UsersService, AuthService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
