@@ -44,7 +44,7 @@ export class AlbumsComponent implements OnInit {
     this.albumId = this.albums.filter((a) => a.url === url);
     console.log(this.albumId[0].id);
 
-    this.router.navigate(['photos'], {
+    this.router.navigate([`albums/${this.albumId[0].id}/photos`], {
       state: { id: this.albumId[0].id },
     });
   }

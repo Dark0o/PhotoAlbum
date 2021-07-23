@@ -14,7 +14,7 @@ const routes: Routes = [
     canActivate: [AuthGuardService],
   },
   {
-    path: 'photos',
+    path: 'albums/:id/photos',
     component: PhotosComponent,
     canActivate: [AuthGuardService],
   },

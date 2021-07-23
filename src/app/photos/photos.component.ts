@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { PhotosService } from '../services/photos.service';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { AlbumsService } from '../services/albums.service';
 
 @Component({
@@ -15,13 +15,16 @@ export class PhotosComponent implements OnInit {
   constructor(
     private photosService: PhotosService,
     private albumsService: AlbumsService,
-    private router: Router
+    private router: Router,
+    private route: ActivatedRoute
   ) {
-    this.albumID = this.router.getCurrentNavigation().extras.state.id;
+    //this.albumID = this.router.getCurrentNavigation().extras.state.id;
     console.log(this.albumID);
   }
 
   ngOnInit(): void {
+    this.albumID = this.route.snapshot.params['id'];
+    console.log(this.albumID);
     this.photosService.getPhotosByAlbumId(this.albumID).subscribe((photos) => {
       this.photos = photos;
       this.albumsService.getAlbumById(this.albumID).subscribe((album) => {
