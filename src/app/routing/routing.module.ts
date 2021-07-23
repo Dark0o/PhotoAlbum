@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { AlbumsComponent } from '../albums/albums.component';
 import { HomeComponent } from '../home/home.component';
+import { PhotosComponent } from '../photos/photos.component';
 import { AuthGuardService } from '../services/auth/auth-guard.service';
 
 const routes: Routes = [
@@ -10,6 +11,11 @@ const routes: Routes = [
   {
     path: 'albums',
     component: AlbumsComponent,
+    canActivate: [AuthGuardService],
+  },
+  {
+    path: 'photos',
+    component: PhotosComponent,
     canActivate: [AuthGuardService],
   },
 ];

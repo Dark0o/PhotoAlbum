@@ -1,2 +1,3 @@
 <h3>Photo Albums</h3>
-<app-card *ngFor='let album of albums' [title]="album.title" [createdBy]="album.createdBy" [url]="album.url"></app-card>
+<app-card *ngFor='let album of albums' [title]="album.title" [createdBy]="album.createdBy" [url]="album.url"
+  (imageSelected)="urlReceived($event)"></app-card>

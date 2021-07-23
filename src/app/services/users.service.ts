@@ -36,9 +36,4 @@ export class UsersService {
   getUserById(id): Observable<any> {
     return this.http.get(`http://jsonplaceholder.typicode.com/users/${id}`);
   }
-  getFirstPhotoByAlbumID(id): Observable<any> {
-    return this.http.get(
-      `https://jsonplaceholder.typicode.com/photos?albumId=${id}`
-    );
-  }
 }

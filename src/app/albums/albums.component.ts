@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { AlbumsService } from '../services/albums.service';
 import { UsersService } from '../services/users.service';
 import { PhotosService } from '../services/photos.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-albums',
@@ -14,7 +15,8 @@ export class AlbumsComponent implements OnInit {
   constructor(
     private albumsService: AlbumsService,
     private usersService: UsersService,
-    private photosService: PhotosService
+    private photosService: PhotosService,
+    private router: Router
   ) {}
 
   ngOnInit(): void {
@@ -28,12 +30,16 @@ export class AlbumsComponent implements OnInit {
           .subscribe((photos) => {
             album.url = photos[0].thumbnailUrl;
             // console.log(photo);
-            console.log(album.id);
+            //console.log(album.id);
           });
 
         return album;
       });
       console.log(this.albums);
     });
+  }
+  urlReceived(event) {
+    console.log(event);
+    this.router.navigate(['photos']);
   }
 }
