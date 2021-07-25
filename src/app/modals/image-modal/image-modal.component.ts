@@ -9,6 +9,7 @@ import { MdbModalRef } from 'mdb-angular-ui-kit/modal';
 })
 export class ImageModalComponent implements OnInit, AfterViewInit {
   photos;
+  index;
   @ViewChild('img') img: ElementRef;
   counter;
 
@@ -16,7 +17,8 @@ export class ImageModalComponent implements OnInit, AfterViewInit {
 
   ngOnInit(): void {
     console.log(this.photos);
-    this.counter = 0;
+    console.log(this.index);
+    this.counter = this.index;
   }
 
   ngAfterViewInit() {

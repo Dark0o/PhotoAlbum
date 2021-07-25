@@ -15,6 +15,7 @@ export class PhotosComponent implements OnInit {
   photos;
   albumTitle;
   modalRef: MdbModalRef<ImageModalComponent>;
+  url;
 
   constructor(
     private photosService: PhotosService,
@@ -26,10 +27,16 @@ export class PhotosComponent implements OnInit {
     //this.albumID = this.router.getCurrentNavigation().extras.state.id;
     console.log(this.albumID);
   }
+  findStartingIndex(url) {
+    return this.photos.map((photo) => photo.thumbnailUrl).indexOf(url);
+  }
   openModal() {
+    let index = this.findStartingIndex(this.url);
+    console.log(index);
+
     this.modalRef = this.modalService.open(ImageModalComponent, {
       modalClass: 'modal-xl modal-dialog-centered',
-      data: { photos: this.photos },
+      data: { photos: this.photos, index: index },
     });
   }
 
@@ -43,7 +50,9 @@ export class PhotosComponent implements OnInit {
       });
     });
   }
+
   urlReceived(url) {
+    this.url = url;
     this.openModal();
     console.log(url);
   }
