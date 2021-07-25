@@ -12,6 +12,7 @@ import { Router } from '@angular/router';
 export class AlbumsComponent implements OnInit {
   albums;
   albumId;
+  searchText;
 
   constructor(
     private albumsService: AlbumsService,
