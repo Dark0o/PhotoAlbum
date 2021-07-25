@@ -1,3 +1,8 @@
 <h3>Photo Albums</h3>
-<app-card *ngFor='let album of albums' [title]="album.title" [createdBy]="album.createdBy" [url]="album.url"
-  (imageSelected)="urlReceived($event)"></app-card>
+<div class="form-group">
+  <label for="search-text">Search Text</label>
+  <input type="text" class="form-control" id="search-text" aria-describedby="search-text" [(ngModel)]="searchText"
+    placeholder="Enter text to search" autofocus>
+</div>
+<app-card lazy-load-images *ngFor='let album of albums | appFilter: searchText' [title]="album.title"
+  [createdBy]="album.createdBy " [url]="album.url" (imageSelected)="urlReceived($event)"></app-card>
