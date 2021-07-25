@@ -1,0 +1,35 @@
+.carousel{
+    display: flex;
+    flex-direction: row;
+}
+
+.container{
+    display: flex;
+    justify-content: center;
+    width: 800px;
+    max-height: 600px;
+}
+
+.container img {
+    width: auto;
+    max-height: 600px;
+    max-width: 800px;
+}
+
+.btns{
+    display: flex;
+    align-items: center;
+}
+
+.carousel button{
+    margin: 30px;
+    font-size: 70px;
+    color: black;
+    background-color: transparent;
+    border:none;
+    transition: ease-in-out all 0.1s;
+    transform: scale(1);
+}
+.carousel button:active {
+    transform: scale(1.2);
+  }

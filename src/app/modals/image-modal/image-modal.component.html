@@ -1,10 +1,10 @@
 <div class="modal-header">
-  <h5 class="modal-title" id="exampleModalLabel"></h5>
+  <h5 class="modal-title" id="exampleModalLabel">Photo Gallery</h5>
   <button type="button" class="btn-close" aria-label="Close" (click)="modalRef.close()"></button>
 </div>
 <div class="modal-body">
   <div class="carousel">
-    <div class="btn">
+    <div class="btns">
       <button (click)="choosePrevious()"><i class="fas fa-chevron-left"></i></button>
     </div>
 
@@ -12,7 +12,7 @@
       <img #img src="" alt="">
     </div>
 
-    <div class="btn">
+    <div class="btns">
       <button (click)="chooseNext()"><i class="fas fa-chevron-right"></i></button>
     </div>
   </div>

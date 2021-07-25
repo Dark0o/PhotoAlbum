@@ -20,6 +20,7 @@ import { FilterPipe } from './pipes/filter.pipe';
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
 import { ImageModalComponent } from './modals/image-modal/image-modal.component';
 import { MdbModalModule } from 'mdb-angular-ui-kit/modal';
+
 @NgModule({
   declarations: [
     AppComponent,
