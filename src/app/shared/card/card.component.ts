@@ -17,5 +17,6 @@ export class CardComponent implements OnInit {
 
   onImageSelected(imgUrl) {
     this.imageSelected.emit(imgUrl);
+    console.log('clicked');
   }
 }

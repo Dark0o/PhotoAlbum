@@ -17,6 +17,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { PhotosService } from './services/photos.service';
 import { LazyLoadImagesModule } from 'ngx-lazy-load-images';
 import { FilterPipe } from './pipes/filter.pipe';
+import { MDBBootstrapModule } from 'angular-bootstrap-md';
 @NgModule({
   declarations: [
     AppComponent,
@@ -33,6 +34,7 @@ import { FilterPipe } from './pipes/filter.pipe';
     FormsModule,
     HttpClientModule,
     LazyLoadImagesModule,
+    MDBBootstrapModule.forRoot(),
   ],
   providers: [
     UsersService,
