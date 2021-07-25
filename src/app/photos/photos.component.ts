@@ -15,6 +15,7 @@ export class PhotosComponent implements OnInit {
   photos;
   albumTitle;
   modalRef: MdbModalRef<ImageModalComponent>;
+  url;
   constructor(
     private photosService: PhotosService,
     private albumsService: AlbumsService,
@@ -26,7 +27,10 @@ export class PhotosComponent implements OnInit {
     console.log(this.albumID);
   }
   openModal() {
-    this.modalRef = this.modalService.open(ImageModalComponent);
+    this.modalRef = this.modalService.open(ImageModalComponent, {
+      modalClass: 'modal-xl modal-dialog-centered',
+      data: { imgUrl: this.url },
+    });
   }
 
   ngOnInit(): void {
@@ -39,5 +43,10 @@ export class PhotosComponent implements OnInit {
       });
       console.log(photos);
     });
+  }
+  urlReceived(url) {
+    this.url = url;
+    console.log(this.url);
+    this.openModal();
   }
 }

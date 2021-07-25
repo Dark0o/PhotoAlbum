@@ -7,7 +7,11 @@ import { MdbModalRef } from 'mdb-angular-ui-kit/modal';
   styleUrls: ['./image-modal.component.scss'],
 })
 export class ImageModalComponent implements OnInit {
+  imgUrl: string;
+
   constructor(public modalRef: MdbModalRef<ImageModalComponent>) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    console.log(this.imgUrl);
+  }
 }
