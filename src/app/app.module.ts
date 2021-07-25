@@ -18,6 +18,8 @@ import { PhotosService } from './services/photos.service';
 import { LazyLoadImagesModule } from 'ngx-lazy-load-images';
 import { FilterPipe } from './pipes/filter.pipe';
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
+import { ImageModalComponent } from './modals/image-modal/image-modal.component';
+import { MdbModalModule } from 'mdb-angular-ui-kit/modal';
 @NgModule({
   declarations: [
     AppComponent,
@@ -27,6 +29,7 @@ import { MDBBootstrapModule } from 'angular-bootstrap-md';
     PhotosComponent,
     CardComponent,
     FilterPipe,
+    ImageModalComponent,
   ],
   imports: [
     BrowserModule,
@@ -35,7 +38,9 @@ import { MDBBootstrapModule } from 'angular-bootstrap-md';
     HttpClientModule,
     LazyLoadImagesModule,
     MDBBootstrapModule.forRoot(),
+    MdbModalModule,
   ],
+  entryComponents: [ImageModalComponent],
   providers: [
     UsersService,
     AuthService,

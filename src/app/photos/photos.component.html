@@ -1,2 +1,3 @@
 <h3>{{ albumTitle}}</h3>
-<app-card lazy-load-images *ngFor="let photo of photos" [url]="photo.thumbnailUrl" [title]="photo.title"></app-card>
+<app-card (click)="openModal()" lazy-load-images *ngFor="let photo of photos" [url]="photo.thumbnailUrl"
+  [title]="photo.title"></app-card>
