@@ -15,6 +15,8 @@ import { CardComponent } from './shared/card/card.component';
 import { AlbumsService } from './services/albums.service';
 import { HttpClientModule } from '@angular/common/http';
 import { PhotosService } from './services/photos.service';
+import { LazyLoadImagesModule } from 'ngx-lazy-load-images';
+import { FilterPipe } from './pipes/filter.pipe';
 @NgModule({
   declarations: [
     AppComponent,
@@ -23,8 +25,15 @@ import { PhotosService } from './services/photos.service';
     AlbumsComponent,
     PhotosComponent,
     CardComponent,
+    FilterPipe,
   ],
-  imports: [BrowserModule, RoutingModule, FormsModule, HttpClientModule],
+  imports: [
+    BrowserModule,
+    RoutingModule,
+    FormsModule,
+    HttpClientModule,
+    LazyLoadImagesModule,
+  ],
   providers: [
     UsersService,
     AuthService,
