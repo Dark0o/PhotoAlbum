@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { PhotosService } from '../services/photos.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { AlbumsService } from '../services/albums.service';
@@ -15,7 +15,7 @@ export class PhotosComponent implements OnInit {
   photos;
   albumTitle;
   modalRef: MdbModalRef<ImageModalComponent>;
-  url;
+
   constructor(
     private photosService: PhotosService,
     private albumsService: AlbumsService,
@@ -29,7 +29,7 @@ export class PhotosComponent implements OnInit {
   openModal() {
     this.modalRef = this.modalService.open(ImageModalComponent, {
       modalClass: 'modal-xl modal-dialog-centered',
-      data: { imgUrl: this.url },
+      data: { photos: this.photos },
     });
   }
 
@@ -41,12 +41,10 @@ export class PhotosComponent implements OnInit {
       this.albumsService.getAlbumById(this.albumID).subscribe((album) => {
         this.albumTitle = album.title;
       });
-      console.log(photos);
     });
   }
   urlReceived(url) {
-    this.url = url;
-    console.log(this.url);
     this.openModal();
+    console.log(url);
   }
 }
