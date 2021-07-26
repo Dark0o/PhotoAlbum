@@ -16,6 +16,7 @@ export class PhotosComponent implements OnInit {
   albumTitle;
   modalRef: MdbModalRef<ImageModalComponent>;
   index;
+  searchText;
 
   constructor(
     private photosService: PhotosService,

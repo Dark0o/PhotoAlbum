@@ -1,3 +1,24 @@
-<h3>{{ albumTitle}}</h3>
-<app-card (imageSelected)="urlReceived($event)" lazy-load-images *ngFor="let photo of photos" [url]="photo.thumbnailUrl"
-  [title]="photo.title"></app-card>
+  <div class="container">
+    <div class="row">
+      <div class="col-xl-1">
+      </div>
+      <div class="col-xl-10">
+        <h3>Album title: {{ albumTitle}}</h3>
+        <div class="form-group">
+          <input type="text" class="form-control" id="search-text" aria-describedby="search-text"
+            [(ngModel)]="searchText" placeholder="Search" autofocus>
+        </div>
+        <div class="cards-container">
+          <app-card (imageSelected)="urlReceived($event)" lazy-load-images
+            *ngFor="let photo of photos | appPhotosFilter: searchText" [url]="photo.thumbnailUrl" [title]="photo.title">
+          </app-card>
+        </div>
+
+
+      </div>
+      <div class="col-xl-1">
+
+
+      </div>
+    </div>
+  </div>
