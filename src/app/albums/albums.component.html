@@ -1,8 +1,26 @@
-<h3>Photo Albums</h3>
-<div class="form-group">
-  <label for="search-text">Search Text</label>
-  <input type="text" class="form-control" id="search-text" aria-describedby="search-text" [(ngModel)]="searchText"
-    placeholder="Enter text to search" autofocus>
+<div class="container">
+  <div class="row">
+    <div class="col-xl-1">
+
+
+    </div>
+    <div class="col-xl-10">
+      <h3>Photo Albums</h3>
+      <div class="form-group">
+        <input type="text" class="form-control" id="search-text" aria-describedby="search-text" [(ngModel)]="searchText"
+          placeholder="Search" autofocus>
+      </div>
+      <div class="cards-container">
+        <app-card lazy-load-images *ngFor='let album of albums | appFilter: searchText' [title]="album.title"
+          [createdBy]="album.createdBy " [url]="album.url" (imageSelected)="urlReceived($event)">
+        </app-card>
+      </div>
+
+
+    </div>
+    <div class="col-xl-1">
+
+
+    </div>
+  </div>
 </div>
-<app-card lazy-load-images *ngFor='let album of albums | appFilter: searchText' [title]="album.title"
-  [createdBy]="album.createdBy " [url]="album.url" (imageSelected)="urlReceived($event)"></app-card>
