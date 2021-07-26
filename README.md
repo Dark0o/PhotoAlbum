@@ -2,6 +2,21 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.2.12.
 
+## Demo user credentials
+```
+{
+  userName: 'laza',
+  password: 'lazic',
+},
+{
+  userName: 'pera',
+  password: 'peric',
+},
+{
+  userName: 'jova',
+  password: 'jovic',
+}
+```
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
