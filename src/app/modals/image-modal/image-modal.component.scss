@@ -33,3 +33,49 @@
 .carousel button:active {
     transform: scale(1.2);
   }
+
+  @media (max-width: 1200px){
+    .container img {
+        width: auto;
+        max-height: 600px;
+        max-width: 525px;
+    }
+}
+@media (max-width: 990px){
+    .container img {
+        width: auto;
+        max-height: 600px;
+        max-width: 360px;
+    }
+    .carousel button{
+        margin: 5px;
+        font-size: 30px;
+    }
+    
+}
+@media (max-width: 580px){
+    .container img {
+        width: auto;
+        max-height: 600px;
+        max-width: 360px;
+    }
+    .carousel button{
+        margin: 14px;
+        font-size: 30px;
+    }
+    
+}
+
+@media (max-width: 550px){
+    .container img {
+        width: auto;
+        max-height: 600px;
+        max-width: 240px;
+    }
+    .carousel button{
+        margin: 0;
+        font-size: 20px;
+    }
+    
+}
+
