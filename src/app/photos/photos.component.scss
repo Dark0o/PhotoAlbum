@@ -1,7 +1,12 @@
-.cards-container{
+.cards-container-grid{
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+}
+.cards-container-list{
+    display: flex;
+    flex-direction: column;
+    
 }
 
 .cards-container app-card {
@@ -21,3 +26,14 @@
     text-indent: -100%;
     opacity: 1;
  }
+.title-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+.icons i{
+margin: 5px;
+cursor: pointer;
+font-size: 25px;
+}

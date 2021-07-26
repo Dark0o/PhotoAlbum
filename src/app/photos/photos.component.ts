@@ -17,6 +17,8 @@ export class PhotosComponent implements OnInit {
   modalRef: MdbModalRef<ImageModalComponent>;
   index;
   searchText;
+  status = false;
+  @ViewChild('cardsContainer') card: ElementRef;
 
   constructor(
     private photosService: PhotosService,
