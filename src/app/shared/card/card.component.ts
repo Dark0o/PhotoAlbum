@@ -9,6 +9,7 @@ export class CardComponent implements OnInit {
   @Input() title;
   @Input() createdBy;
   @Input() url;
+  @Input() status;
   @Output() imageSelected = new EventEmitter();
   @Output() deletedItem = new EventEmitter();
   constructor() {}

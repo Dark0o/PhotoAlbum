@@ -17,7 +17,7 @@
       <div #cardsContainer class="cards-container"
         [ngClass]="status ? 'cards-container-list' :  'cards-container-grid'">
         <app-card lazy-load-images *ngFor='let album of albums | appFilter: searchText' [title]="album.title"
-          [createdBy]="album.createdBy " [url]="album.url" (imageSelected)="urlReceived($event)"
+          [createdBy]="album.createdBy " [url]="album.url" [status]="status" (imageSelected)="urlReceived($event)"
           (deletedItem)="deleteItem($event)">
         </app-card>
       </div>

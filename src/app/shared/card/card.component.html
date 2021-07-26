@@ -1,8 +1,8 @@
-<div>
+<div [ngClass]="status ? 'list' :  ''">
   <div class="preview-img">
     <img [attr.data-src]='url' alt="" (click)="onImageSelected(url)">
   </div>
-  <div class="options">
+  <div [ngClass]="status ? 'options-list' :  'options'">
     <div class="info-text">
       <p>{{ title}}</p>
       <p *ngIf='createdBy'>Created by: {{ createdBy }}</p>

@@ -13,7 +13,7 @@ export class AlbumsComponent implements OnInit {
   albums;
   albumId;
   searchText;
-  status;
+  status = false;
   @ViewChild('cardsContainer') card: ElementRef;
   constructor(
     private albumsService: AlbumsService,
