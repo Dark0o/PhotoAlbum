@@ -1,39 +1,43 @@
-.cards-container-grid{
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
+.cards-container-grid {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
 }
-.cards-container-list{
-    display: flex;
-    flex-direction: column;
-    
+
+.cards-container-list {
+  display: flex;
+  flex-direction: column;
+
 }
 
 .cards-container app-card {
-    width: 30%;
-    /* margin-right: 10px; */
+  width: 30%;
 }
 
-.form-group input{
-    width: 200px;
-    border: none;
-    border-bottom: 1px solid black;
-    padding: 5px 10px;
-    outline: none;
+.form-group input {
+  width: 200px;
+  border: none;
+  border-bottom: 1px solid black;
+  padding: 5px 10px;
+  outline: none;
 }
+
 [placeholder]:focus::-webkit-input-placeholder {
-    transition: text-indent 0.4s 0.4s ease; 
-    text-indent: -100%;
-    opacity: 1;
- }
- .title-container{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
+  transition: text-indent 0.4s 0.4s ease;
+  text-indent: -100%;
+  opacity: 1;
 }
-.icons i{
-margin: 5px;
-cursor: pointer;
-font-size: 25px;
+
+.title-container {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.icons i {
+  margin: 5px;
+  cursor: pointer;
+  font-size: 25px;
 }

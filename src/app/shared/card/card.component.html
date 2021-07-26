@@ -1,7 +1,6 @@
 <div>
   <div class="preview-img">
-    <img style="width: 250px;
-      height: auto;" [attr.data-src]='url' alt="" (click)="onImageSelected(url)">
+    <img [attr.data-src]='url' alt="" (click)="onImageSelected(url)">
   </div>
   <p>{{ title}}</p>
   <p *ngIf='createdBy'>Created by: {{ createdBy }}</p>
