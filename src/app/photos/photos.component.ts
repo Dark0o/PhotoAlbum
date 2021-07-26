@@ -56,4 +56,9 @@ export class PhotosComponent implements OnInit {
     this.openModal();
     console.log(url);
   }
+  deleteItem(url) {
+    this.photos = this.photos.filter((p) => p.thumbnailUrl !== url);
+    console.log(url);
+    console.log(this.photos);
+  }
 }

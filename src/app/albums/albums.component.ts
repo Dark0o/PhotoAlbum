@@ -50,4 +50,7 @@ export class AlbumsComponent implements OnInit {
       state: { id: this.albumId[0].id },
     });
   }
+  deleteItem(url) {
+    this.albums = this.albums.filter((a) => a.url !== url);
+  }
 }

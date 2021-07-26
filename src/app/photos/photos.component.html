@@ -12,14 +12,13 @@
 
         </div>
 
-
         <div class="form-group">
           <input type="text" id="search-text" aria-describedby="search-text" [(ngModel)]="searchText"
             placeholder="Search" autofocus>
         </div>
         <div class="cards-container" #cardsContainer
           [ngClass]="status ? 'cards-container-list' :  'cards-container-grid'">
-          <app-card (imageSelected)="urlReceived($event)" lazy-load-images
+          <app-card (imageSelected)="urlReceived($event)" (deletedItem)="deleteItem($event)" lazy-load-images
             *ngFor="let photo of photos | appPhotosFilter: searchText" [url]="photo.thumbnailUrl" [title]="photo.title">
           </app-card>
         </div>

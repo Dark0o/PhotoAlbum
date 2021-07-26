@@ -10,7 +10,7 @@ export class CardComponent implements OnInit {
   @Input() createdBy;
   @Input() url;
   @Output() imageSelected = new EventEmitter();
-
+  @Output() deletedItem = new EventEmitter();
   constructor() {}
 
   ngOnInit(): void {}
@@ -18,5 +18,9 @@ export class CardComponent implements OnInit {
   onImageSelected(imgUrl) {
     this.imageSelected.emit(imgUrl);
     console.log('clicked');
+  }
+  onItemDeleted(url) {
+    this.deletedItem.emit(url);
+    console.log('delete clicked');
   }
 }

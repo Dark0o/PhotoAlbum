@@ -2,6 +2,12 @@
   <div class="preview-img">
     <img [attr.data-src]='url' alt="" (click)="onImageSelected(url)">
   </div>
-  <p>{{ title}}</p>
-  <p *ngIf='createdBy'>Created by: {{ createdBy }}</p>
+  <div class="options">
+    <div class="info-text">
+      <p>{{ title}}</p>
+      <p *ngIf='createdBy'>Created by: {{ createdBy }}</p>
+    </div>
+    <div class="delete-btn" (click)='onItemDeleted(url)'><i class="far fa-trash-alt"></i></div>
+  </div>
+
 </div>
