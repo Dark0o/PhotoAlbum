@@ -3,12 +3,20 @@
     <div class="col-xl-1">
     </div>
     <div class="col-xl-10">
-      <h3>Photo Albums</h3>
-      <div class="form-group">
-        <input type="text" class="form-control" id="search-text" aria-describedby="search-text" [(ngModel)]="searchText"
-          placeholder="Search" autofocus>
+      <div class="title-container">
+        <h3>Photo albums</h3>
+        <div class="icons">
+          <span (click)='status=status = false'><i class="fas fa-th-large"></i></span>
+          <span (click)='status=status = true'><i class="fas fa-bars"></i></span>
+        </div>
+
       </div>
-      <div class="cards-container">
+      <div class="form-group">
+        <input type="text" id="search-text" aria-describedby="search-text" [(ngModel)]="searchText" placeholder="Search"
+          autofocus>
+      </div>
+      <div #cardsContainer class="cards-container"
+        [ngClass]="status ? 'cards-container-list' :  'cards-container-grid'">
         <app-card lazy-load-images *ngFor='let album of albums | appFilter: searchText' [title]="album.title"
           [createdBy]="album.createdBy " [url]="album.url" (imageSelected)="urlReceived($event)">
         </app-card>

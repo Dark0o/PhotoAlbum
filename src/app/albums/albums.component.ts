@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { AlbumsService } from '../services/albums.service';
 import { UsersService } from '../services/users.service';
 import { PhotosService } from '../services/photos.service';
@@ -13,7 +13,8 @@ export class AlbumsComponent implements OnInit {
   albums;
   albumId;
   searchText;
-
+  status;
+  @ViewChild('cardsContainer') card: ElementRef;
   constructor(
     private albumsService: AlbumsService,
     private usersService: UsersService,
