@@ -29,7 +29,7 @@ export class AuthService {
         JSON.stringify({ username: username, isUserLoggedIn: this.isLoggedIn })
       );
       return this.isLoggedIn;
-    }
+    } else alert('Incorrect username or password!');
   }
 
   isUserLoggedIn(): boolean {

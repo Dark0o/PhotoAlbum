@@ -21,6 +21,7 @@ import { MDBBootstrapModule } from 'angular-bootstrap-md';
 import { ImageModalComponent } from './modals/image-modal/image-modal.component';
 import { MdbModalModule } from 'mdb-angular-ui-kit/modal';
 import { FilterPhotosPipe } from './pipes/filter-photos.pipe';
+import { NavigationComponent } from './navigation/navigation.component';
 
 @NgModule({
   declarations: [
@@ -33,6 +34,7 @@ import { FilterPhotosPipe } from './pipes/filter-photos.pipe';
     FilterPipe,
     ImageModalComponent,
     FilterPhotosPipe,
+    NavigationComponent,
   ],
   imports: [
     BrowserModule,

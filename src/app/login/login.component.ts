@@ -14,9 +14,4 @@ export class LoginComponent implements OnInit {
   onLogIn(loginForm) {
     this.authService.login(loginForm.value.username, loginForm.value.password);
   }
-  onLogOut() {
-    console.log('Logged out');
-
-    this.authService.logoutUser();
-  }
 }
